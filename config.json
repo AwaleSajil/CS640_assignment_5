@@ -1,0 +1,117 @@
+{
+    "preprocess": {
+        "data_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional.zip",
+        "zip_file_struct": "bank-additional/bank-additional-full.csv",
+        "data_local_path": "./data/",
+        "data_sep": ";",
+        "target_col": "y",
+        "train_test_split": 0.2,
+        "age_bin": {
+            "col": "age",
+            "n_bins": 11,
+            "min_age": 17,
+            "max_age": 98
+        }
+    },
+    "classifiers": {
+        "scoring": {
+            "accuracy": "accuracy",
+            "precision": "precision",
+            "recall": "recall",
+            "f1": "f1"
+        },
+        "k_folds": 5,
+        "init_model_config": {
+            "LR": {},
+            "SVC": {},
+            "DT": {
+                "max_depth": 5
+            },
+            "RF": {
+                "max_depth": 5
+            },
+            "NN": {
+                "hidden_layer_sizes": [
+                    64
+                ]
+            }
+        }
+    },
+    "best_model_config": {
+        "LR": {
+            "config": {
+                "classifier__C": 0.002376627055680573,
+                "classifier__class_weight": "balanced",
+                "classifier__max_iter": 568,
+                "classifier__penalty": "l2",
+                "classifier__solver": "lbfgs",
+                "classifier__tol": 0.03162397934477016
+            },
+            "best_score_": 0.6046793793088567
+        },
+        "SVC": {
+            "config": {
+                "classifier__C": 4.5390384445313074,
+                "classifier__class_weight": null,
+                "classifier__coef0": 0.0644020747733611,
+                "classifier__degree": 4,
+                "classifier__gamma": 0.01,
+                "classifier__kernel": "rbf",
+                "classifier__max_iter": 4953,
+                "classifier__shrinking": false,
+                "classifier__tol": 1.6734011057931368e-05
+            },
+            "best_score_": 0.5417068534097815
+        },
+        "DT": {
+            "config": {
+                "classifier__class_weight": null,
+                "classifier__criterion": "gini",
+                "classifier__max_depth": 13,
+                "classifier__max_features": null,
+                "classifier__max_leaf_nodes": 46,
+                "classifier__min_samples_leaf": 3,
+                "classifier__min_samples_split": 5,
+                "classifier__splitter": "best"
+            },
+            "best_score_": 0.608544591112317
+        },
+        "RF": {
+            "config": {
+                "classifier__bootstrap": true,
+                "classifier__class_weight": null,
+                "classifier__criterion": "gini",
+                "classifier__max_depth": 15,
+                "classifier__max_features": null,
+                "classifier__max_leaf_nodes": 49,
+                "classifier__min_samples_leaf": 4,
+                "classifier__min_samples_split": 9,
+                "classifier__n_estimators": 90
+            },
+            "best_score_": 0.6078752028102725
+        },
+        "NN": {
+            "config": {
+                "classifier__activation": "logistic",
+                "classifier__alpha": 0.06274000589321874,
+                "classifier__batch_size": 128,
+                "classifier__early_stopping": false,
+                "classifier__hidden_layer_sizes": [
+                    24
+                ],
+                "classifier__learning_rate": "adaptive",
+                "classifier__learning_rate_init": 0.006754557606646178,
+                "classifier__max_iter": 225,
+                "classifier__n_iter_no_change": 9,
+                "classifier__solver": "sgd",
+                "classifier__tol": 2.0194723698234223e-05,
+                "classifier__validation_fraction": 0.1553598778997871
+            },
+            "best_score_": 0.6070114276668337
+        }
+    },
+    "hyper_parm_tuning": {},
+    "output": {
+        "dir": "./exp1/"
+    }
+}
